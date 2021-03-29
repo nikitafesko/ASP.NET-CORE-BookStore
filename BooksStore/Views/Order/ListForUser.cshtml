@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Order>
+
+@{
+    ViewBag.Title = "Orders";
+}
+
+@if (Model.Any())
+{
+    <table class="table table-bordered table-striped">
+        <tr><th>Name</th><th colspan="3">Details</th><th>Status</th><th></th><th></th></tr>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.Name</td>
+                <td>Product</td>
+                <th>Quantity</th>
+                <th>Quantity on Stock</th>
+                <th>@order.Status</th>
+                <td>
+                    @if (order.Status == OrderStatus.Adopted)
+                    {
+                        <form asp-action="ReturnRequest" method="post">
+                            <input type="hidden" name="orderId" value="@order.OrderId"/>
+                            <button type="submit" class="btn btn-sm btn-info">Return Request</button>
+                        </form>
+                    }
+                </td>
+                <td>
+                    @if (order.Status != OrderStatus.Delivered)
+                    {
+                        <form asp-action="MarkRejected" method="post">
+                            <input type="hidden" name="orderId" value="@order.OrderId" />
+                            <button type="submit" class="btn btn-sm btn-danger">Reject</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+            @foreach (var line in order.Lines)
+            {
+                <tr>
+                    <td></td>
+                    <td>@line.Book.Name</td>
+                    <td>@line.Quantity</td>
+                    <td>@line.Book.Count</td>
+                </tr>
+            }
+        }
+    </table>
+}
+else
+{
+    <div class="text-center">No Unshipped Orders</div>
+}

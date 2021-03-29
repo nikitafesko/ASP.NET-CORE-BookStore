@@ -1,0 +1,46 @@
+﻿@using BookStore.Components
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet"
+          asp-href-include="/lib/bootstrap/dist/**/*.min.css"
+          asp-href-exclude="**/*-reboot*,**/*-grid*"/> 
+    <link rel="stylesheet" asp-href-include="/lib/font-awesome/css/*.css"/>
+    <title>Books Store</title>
+</head>
+<body>
+<div class="navbar navbar-expand-md navbar-dark bg-primary" role="navigation">
+    <div class="row">
+        <a class="col navbar-brand" href="#">BOOK STORE</a>
+        <div class="col-4 text-right">
+            @await Component.InvokeAsync(nameof(CartSummary))
+        </div> 
+        <div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <p>@User.Identity.Name</p>
+
+                <form method="post" asp-controller="Account" asp-action="Logout">
+                    <input class="text-white" type="submit" value="Выход" />
+                </form>
+            }
+            else
+            {
+                <a class="text-white" asp-controller="Account" asp-action="Login">Вход</a>
+                <a class="text-white" asp-controller="Account" asp-action="Register">Регистрация</a>
+            }
+            </div>
+    </div>
+</div>
+    <div class="row m-1 p-1">
+        <div id="categories" class="col-3">
+            @await Component.InvokeAsync(nameof(NavigationMenu))
+        </div>
+        <div class="col-9">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿@model Book
+
+@{
+    ViewBag.Title = "Edit Book";
+    Layout = "_AdminLayout";
+}
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="BookId" />
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <div><span asp-validation-for="Name" class="text-danger"></span></div>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Author"></label>
+            <div><span asp-validation-for="Author" class="text-danger"></span></div>
+            <input asp-for="Author" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Publisher"></label>
+            <div><span asp-validation-for="Publisher" class="text-danger"></span></div>
+            <input asp-for="Publisher" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Year"></label>
+            <div><span asp-validation-for="Year" class="text-danger"></span></div>
+            <input asp-for="Year" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="CoverType"></label>
+            <div><span asp-validation-for="CoverType" class="text-danger"></span></div>
+            <input asp-for="CoverType" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="PagesCount"></label>
+            <div><span asp-validation-for="PagesCount" class="text-danger"></span></div>
+            <input asp-for="PagesCount" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Language"></label>
+            <div><span asp-validation-for="Language" class="text-danger"></span></div>
+            <input asp-for="Language" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Description"></label>
+            <div><span asp-validation-for="Description" class="text-danger"></span></div>
+            <textarea asp-for="Description" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label asp-for="Category"></label>
+            <div><span asp-validation-for="Category" class="text-danger"></span></div>
+            <input asp-for="Category" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Price"></label>
+            <div><span asp-validation-for="Price" class="text-danger"></span></div>
+            <input asp-for="Price" class="form-control" />
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary" type="submit">Save</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>

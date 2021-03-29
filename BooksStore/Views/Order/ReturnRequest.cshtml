@@ -1,0 +1,12 @@
+﻿@model Order
+
+<h2>Return Books</h2>
+@foreach (var line in Model.Lines)
+{
+<form asp-controller="Order" asp-action="ReturnRequestSubmit" method="post">
+    <label>@line.Book.Name</label>
+    <input type="hidden" name="orderId" value="@Model.OrderId" />
+    <input type="number" name="@line.Book.BookId" />
+    <button type="submit">Return</button>
+</form>
+}

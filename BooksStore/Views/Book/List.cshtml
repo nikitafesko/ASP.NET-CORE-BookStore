@@ -1,0 +1,128 @@
+﻿@using Microsoft.AspNetCore.Http
+@model BookListViewModel
+
+<form class="form-inline" asp-controller="Book" asp-action="List" method="post">
+
+    @if (string.IsNullOrEmpty(@Model.SearchText))
+    {
+        <input name="searchText" type="search" placeholder="Search..." />
+    }
+    else
+    {
+        <input name="searchText" type="search" placeholder=@Model.SearchText />
+    }
+    <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+@if (!Model.Books.Any())
+{
+    <h3>Book is not found!</h3>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                Book title
+                @if (!@Model.SortType.Equals("byName"))
+                {
+                    <a asp-controller="Book" asp-action="List" asp-route-sortType="byName">
+                        <i class="fa fa-sort-alpha-asc"></i>
+                    </a>
+                }
+                else
+                {
+                    <a asp-controller="Book" asp-action="List" asp-route-sortType="byNameDesc">
+                        <i class="fa fa-sort-alpha-desc"></i>
+                    </a>
+                }
+            </th>
+            <th>
+                Author
+                @if (!@Model.SortType.Equals("byAuthor"))
+                {
+                    <a asp-controller="Book" asp-action="List" asp-route-sortType="byAuthor">
+                        <i class="fa fa-sort-alpha-asc"></i>
+                    </a>
+                }
+                else
+                {
+                    <a asp-controller="Book" asp-action="List" asp-route-sortType="byAuthorDesc">
+                        <i class="fa fa-sort-alpha-desc"></i>
+                    </a>
+                }
+            </th>
+            <th>
+                Publisher
+                @if (!@Model.SortType.Equals("byPublisher"))
+                {
+                    <a asp-controller="Book" asp-action="List" asp-route-sortType="byPublisher">
+                        <i class="fa fa-sort-alpha-asc"></i>
+                    </a>
+                }
+                else
+                {
+                    <a asp-controller="Book" asp-action="List" asp-route-sortType="byPublisherDesc">
+                        <i class="fa fa-sort-alpha-desc"></i>
+                    </a>
+                }
+            </th>
+            <th>
+                Year
+                @if (!@Model.SortType.Equals("byYear"))
+                {
+                    <a asp-controller="Book" asp-action="List" asp-route-sortType="byYear">
+                        <i class="fa fa-sort-numeric-asc"></i>
+                    </a>
+                }
+                else
+                {
+                    <a asp-controller="Book" asp-action="List" asp-route-sortType="byYearDesc">
+                        <i class="fa fa-sort-numeric-desc"></i>
+                    </a>
+                }
+            </th>
+            <th>
+                Price
+                @if (!@Model.SortType.Equals("byPrice"))
+                {
+                    <a asp-controller="Book" asp-action="List" asp-route-sortType="byPrice">
+                        <i class="fa fa-sort-numeric-asc"></i>
+                    </a>
+                }
+                else
+                {
+                    <a asp-controller="Book" asp-action="List" asp-route-sortType="byPriceDesc">
+                        <i class="fa fa-sort-numeric-desc"></i>
+                    </a>
+                }
+            </th>
+            <th>
+                <small>Add to cart</small>
+            </th>
+        </tr>
+
+        @foreach (var book in Model.Books)
+        {
+            <tr>
+                @await Html.PartialAsync("BookSummary", book)
+            </tr>
+        }
+
+    </table>
+}
+
+<div class="custom-control-inline">
+    <div page-model="@Model.PagingInfo" page-action="List" page-classes-enabled="true"
+         page-class="btn" page-class-normal="btn-secondary"
+         page-class-selected="btn-primary" page-url-category="@Model.CurrentCategory" class="btn-group m-1"></div>
+    <div class="text-nowrap text-info">Books at page:</div>
+    <form class="custom-select" asp-controller="Book" asp-action="List" method="post">
+        <select name="pageSizeString">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+        </select>
+        <input type="submit"/>
+    </form>
+</div>
