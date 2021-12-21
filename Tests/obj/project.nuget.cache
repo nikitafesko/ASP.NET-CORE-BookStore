@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Zx2zI9E707EbXWVb+T2cAaoO3Oy9F3QOfI3DBoJw51J+qOJDgAQR2DQX1DMJsHIZYxLe9n0Cf37Ch4qyXVWcHw==",
+  "dgSpecHash": "qL9AKkIBiW8zgGSuVVyeNtdhXmlriTcQbyjMrzYIvucM5pUqW9gzZfLUIAxCbdK/tsCc08CaL/tv82iDPSiRsQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mikita.Fesko\\Desktop\\testTeamCity\\Tests\\Tests.csproj",
   "expectedPackageFiles": [
@@ -64,7 +64,7 @@
     "C:\\Users\\Mikita.Fesko\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
     "C:\\Users\\Mikita.Fesko\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
     "C:\\Users\\Mikita.Fesko\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",
-    "C:\\Users\\Mikita.Fesko\\.nuget\\packages\\nunit\\3.13.2\\nunit.3.13.2.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\nunit\\3.12.0\\nunit.3.12.0.nupkg.sha512",
     "C:\\Users\\Mikita.Fesko\\.nuget\\packages\\nunit3testadapter\\4.0.0\\nunit3testadapter.4.0.0.nupkg.sha512",
     "C:\\Users\\Mikita.Fesko\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Mikita.Fesko\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
