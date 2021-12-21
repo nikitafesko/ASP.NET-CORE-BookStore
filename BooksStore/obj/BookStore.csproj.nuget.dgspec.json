@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projects\\web\\BookStore6\\BooksStore\\BookStore.csproj": {}
+    "C:\\Users\\Mikita.Fesko\\Desktop\\testTeamCity\\BooksStore\\BookStore.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\web\\BookStore6\\BooksStore\\BookStore.csproj": {
+    "C:\\Users\\Mikita.Fesko\\Desktop\\testTeamCity\\BooksStore\\BookStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\web\\BookStore6\\BooksStore\\BookStore.csproj",
+        "projectUniqueName": "C:\\Users\\Mikita.Fesko\\Desktop\\testTeamCity\\BooksStore\\BookStore.csproj",
         "projectName": "BookStore",
-        "projectPath": "E:\\Projects\\web\\BookStore6\\BooksStore\\BookStore.csproj",
-        "packagesPath": "C:\\Users\\11333\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\web\\BookStore6\\BooksStore\\obj\\",
+        "projectPath": "C:\\Users\\Mikita.Fesko\\Desktop\\testTeamCity\\BooksStore\\BookStore.csproj",
+        "packagesPath": "C:\\Users\\Mikita.Fesko\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mikita.Fesko\\Desktop\\testTeamCity\\BooksStore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "D:\\Microsoft VS\\components\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\11333\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mikita.Fesko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -27,6 +28,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -92,16 +94,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.10, 3.1.10]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.13, 3.1.13]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -110,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
