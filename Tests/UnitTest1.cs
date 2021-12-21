@@ -44,7 +44,7 @@ namespace Tests
 
             ViewResult result = controller.Delete(1) as ViewResult;
 
-            Assert.IsNotNull(result);
+            Assert.IsNull(result);
         }
     }
 }
