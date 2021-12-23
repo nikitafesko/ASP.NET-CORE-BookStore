@@ -27,8 +27,8 @@ namespace Tests
                 Name = "123",
                 Author = GetHashCode().ToString(),
                 Description = GetHashCode().ToString(),
-                 BookId = GetHashCode(),
-                 Year = GetHashCode().ToString(),
+                BookId = GetHashCode(),
+                Year = GetHashCode().ToString(),
             };
             var mock = new Mock<IBookRepository>();
             mock.Setup(a => a.DeleteBook(1)).Returns(obj);
@@ -44,6 +44,32 @@ namespace Tests
             ViewResult result = controller.Delete(1) as ViewResult;
 
             Assert.IsNull(result);
+        }
+        [Test]
+        public void Test2()
+        {
+            var obj = new Book()
+            {
+                Name = "123",
+                Author = GetHashCode().ToString(),
+                Description = GetHashCode().ToString(),
+                BookId = GetHashCode(),
+                Year = GetHashCode().ToString(),
+            };
+            var mock = new Mock<IBookRepository>();
+            mock.Setup(a => a.DeleteBook(1)).Returns(obj);
+
+            var httpContext = new DefaultHttpContext();
+            var tempData = new TempDataDictionary(httpContext, Mock.Of<ITempDataProvider>());
+            tempData["massage"] = "admin";
+            var controller = new AdminController(mock.Object)
+            {
+                TempData = tempData
+            };
+
+            ViewResult result = controller.Delete(1) as ViewResult;
+
+            Assert.IsNotNull(result);
         }
     }
 }
